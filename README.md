@@ -14,7 +14,7 @@ Verwenden Sie die Bibliothek, um für jede Spalte den Durchschnitt zu berechnen.
 
 Hinweis: In der vorliegenden Datei enthalten alle Spalten Dezimalzahlen, d.h. sie können in einen passenden numerischen Datentyp konvertiert werden. Im echten Leben müsste man natürlich noch berücksichtigen, dass manche  Spalten auch Text- oder andere Daten beinhalten können (für die man natürlich auch keinen Durchschnitt berechnen kann).
 
-## Aufgabe 2
+## Aufgabe 2 (optional)
 
 Sie finden (mal wieder) die Klasse `Document` im aktuellen Projekt. Die kennen Sie bereits aus früheren Projekten, und sie kann benutzt werden um eine Daten einzulesen und zu tokenisieren. Als Übungsmaterial gibt es außerdem mal wieder Bram Stoker's Dracula. Implementieren Sie die Methode `printStats(File f)`. Diese soll eine neue CSV-Datei anlegen, die die folgenden basalen statistischen Daten über den Text enthält:
 
