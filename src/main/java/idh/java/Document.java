@@ -4,6 +4,7 @@ package idh.java;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -44,14 +45,12 @@ public class Document implements Iterable<String> {
 	
 	public static final void main(String[] args) throws IOException {
 		Document d = Document.readFromFile(new File("src/main/resources/dracula.txt"));
-		for(String token : d) {
-			//System.out.println(token);
-		}
 		numberOfWords(d);
 		numberOfTypes(d);
 		numberOfBelow5(d);
 		numberOfBlood(d);
-		//printStats("src/main/resources/stats.csv", "True", "False");
+		mostCommonWord(d);
+		mostCommonCapitalWord(d);
 	}
 	
 	public static void numberOfWords(Document doc) throws IOException {
@@ -90,6 +89,49 @@ public class Document implements Iterable<String> {
 			}
 		}
 		printStats("src/main/resources/stats.csv", "Anzahl des Wortes 'blood'", String.valueOf(i));
+
+	}
+	
+	public static void mostCommonWord(Document doc) throws IOException {
+		HashMap<String, Integer> wordFrequencyMap = new HashMap<>();
+		for(String token : doc) {
+            wordFrequencyMap.put(token, wordFrequencyMap.getOrDefault(token, 0) + 1);
+		}
+		String mostCommonWord = "";
+        int maxFrequency = 0;
+
+        for (HashMap.Entry<String, Integer> entry : wordFrequencyMap.entrySet()) {
+            String word = entry.getKey();
+            int frequency = entry.getValue();
+
+            if (frequency > maxFrequency) {
+                mostCommonWord = word;
+                maxFrequency = frequency;
+            }
+        }
+        printStats("src/main/resources/stats.csv", "Am häufigsten vorkommendes Wort", mostCommonWord);
+	}
+	
+	public static void mostCommonCapitalWord(Document doc) throws IOException {
+		HashMap<String, Integer> wordFrequencyMap = new HashMap<>();
+		for(String token : doc) {
+			if(Character.isUpperCase(token.charAt(0))) {
+            wordFrequencyMap.put(token, wordFrequencyMap.getOrDefault(token, 0) + 1);
+			}
+		}
+		String mostCommonWord = "";
+        int maxFrequency = 0;
+
+        for (HashMap.Entry<String, Integer> entry : wordFrequencyMap.entrySet()) {
+            String word = entry.getKey();
+            int frequency = entry.getValue();
+
+            if (frequency > maxFrequency) {
+                mostCommonWord = word;
+                maxFrequency = frequency;
+            }
+        }
+        printStats("src/main/resources/stats.csv", "Am häufigsten vorkommendes großgeschriebenes Wort", mostCommonWord);
 
 	}
 	
