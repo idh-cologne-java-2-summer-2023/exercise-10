@@ -1,6 +1,5 @@
 package idh.java;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -12,7 +11,7 @@ public class Document implements Iterable<String> {
 	String documentText;
 
 	public static Document readFromFile(File f) throws IOException {
-		
+				
 		Document doc = new Document();
 		doc.documentText = FileUtils.readFileToString(f, "UTF-8");
 		
