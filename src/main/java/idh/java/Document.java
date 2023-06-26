@@ -31,7 +31,8 @@ public class Document implements Iterable<String> {
 		// TODO: Implement
 	}
 	
-	public static final void main(String[] args) throws IOException {
+	
+	public static void main(String[] args) throws IOException {
 		Document d = Document.readFromFile(new File("src/main/resources/dracula.txt"));
 		d.printStats(new File("target/stats.csv"));
 	}
@@ -55,3 +56,5 @@ public class Document implements Iterable<String> {
 	
 	
 }
+
+
