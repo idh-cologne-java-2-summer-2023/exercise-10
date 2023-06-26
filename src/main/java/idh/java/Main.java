@@ -30,18 +30,18 @@ public class Main {
 
         void run() throws IOException {
 
-            parser(0);
+            csvMedianCal(0);
 
         }
 
-        void parser(int row ) throws IOException {
+        void csvMedianCal(int row ) throws IOException {
 
             Reader in = new FileReader(csvFileLocation);
 
             String consolePrintStream = "";
 
-            double columValue = 0;
-            int columSize = 0;
+            double columValue = 0; //summ of all individual values from one colum
+            int columSize = 0; //length of the colum
 
             try {
 
@@ -71,7 +71,7 @@ public class Main {
 
                 } else {
 
-                    parser(row +1);
+                    csvMedianCal(row +1);
 
                 }
 
