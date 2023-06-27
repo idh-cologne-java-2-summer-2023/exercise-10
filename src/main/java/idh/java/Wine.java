@@ -52,7 +52,7 @@ public class Wine {
 			sum += values.get(start + step);
 			counter++;
 		}
-		System.out.println("Durchschnitt der Spalte " + columnNR + " ist: " + decimal.format(sum/ max) );
+		System.out.println("Der Durchschnitt von Spalte " + columnNR + " ist: " + decimal.format(sum/ max) );
 	}
 
 }
