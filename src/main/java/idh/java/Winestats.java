@@ -1,4 +1,5 @@
 package idh.java;
+
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 
@@ -11,16 +12,19 @@ import java.lang.ClassLoader;
 
 public class Winestats {
 	public static void main(String[] args) throws IOException {
-		//accessing column values by index
 		
-		String csvDoc = "src/main/resources/wine.csv";
-		Reader in = new FileReader(csvDoc);
+		// accessing column values by index
+		String csvWine = "src/main/resources/wine.csv";
+		Reader in = new FileReader(csvWine);
 		Iterable<CSVRecord> records = CSVFormat.DEFAULT.parse(in);
-		//TO DO: rewrite for-loop/dynamic index
+		
+		// TO DO: rewrite for-loop/dynamic index
 		for (CSVRecord record : records) {
-		    String columnOne = record.get(0);
-		    String columnTwo = record.get(1);
+			String column = record.get(0);
 		}
+		//thanks, stackoverflow
+		
+
 	}
-	
+
 }
