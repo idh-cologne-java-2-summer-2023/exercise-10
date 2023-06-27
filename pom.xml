@@ -3,6 +3,8 @@
 	<groupId>idh.java</groupId>
 	<artifactId>exercise-10</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>commons-io</groupId>
