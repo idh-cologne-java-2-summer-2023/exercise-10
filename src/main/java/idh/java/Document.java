@@ -32,7 +32,7 @@ public class Document implements Iterable<String> {
 	}
 	
 	public static final void main(String[] args) throws IOException {
-		Document d = Document.readFromFile(new File("src/main/resources/dracula.txt"));
+		Document d = Document.readFromFile(new File("src/main/resources/wine.csv"));
 		d.printStats(new File("target/stats.csv"));
 	}
 
