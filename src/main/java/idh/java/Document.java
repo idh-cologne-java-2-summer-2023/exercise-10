@@ -28,7 +28,6 @@ public class Document implements Iterable<String> {
 	}
 	
 	public void printStats(File f) {
-		// TODO: Implement
 	}
 	
 	public static final void main(String[] args) throws IOException {
